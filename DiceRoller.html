@@ -90,7 +90,7 @@ button:hover {
 </style>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper" onload="rollDice()">
         <div class="win-text">
           <p>Welcome to Marjie's Dice Roller Game! 
               <br>
@@ -102,20 +102,20 @@ button:hover {
           </p>
         </div>
         
-        <div class="row">
-        <div class="dice diceOne">
+        <div class="row" onload="rollDice()">
+        <div class="dice diceOne" onload="rollDice()">
           <h1>1</h1>
           <p id="diceNumOne" class="diceNum1"></p>
         </div>
       
-        <div class="dice diceTwo">
+        <div class="dice diceTwo" onload="rollDice()">
           <h1>1</h1>
           <p id="diceNumTwo" class="diceNum1"></p>
         </div>
         </div>
         
         <div class="button">
-          <button onclick="rollDice()">Ready Go!</button>
+          <button type ="button" onclick="rollDice()" autofocus>Ready Go!</button>
         </div>
       </div>
 

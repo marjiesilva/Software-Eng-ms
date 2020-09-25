@@ -1,0 +1,122 @@
+<!--
+
+ Author: Marjorie Silva
+
+ Class:  Software Engineering
+
+ Project: Lab 2 / Regular Expression
+
+ Description: This is the first version of my Regular Expression and is being submitted as part of Lab 2.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<title>Marjie's Regular Expression</title>
+<meta charset="utf-8">
+<head>
+<style>
+body {
+  background: #757272;
+  font-family:Arial, Helvetica, sans-serif;
+}
+h1{
+    text-align:center;
+    font-weight:800;
+    font-size:1.5em;
+    margin-bottom:1em;
+    margin-top: 5em;
+    color:#010f14;
+}
+h2{
+    text-align:center;
+    font-weight:800;
+    font-size:1em;
+    margin-bottom:1em;
+    margin-top: 1em;
+    color:#010b0f;
+}
+form{
+    text-align: center;
+    font-size: larger;
+}
+.submitButton{
+    font-size: 25px;
+}
+
+
+
+
+</style>
+</head>
+<body>  
+
+<h1>Marjie's Regular Expression Test</h1>
+<hr>
+<hr>
+
+<h2>Begin by inputting the string you want to test followed by the Regular Expression
+    you are testing against. Lastly, hit the submit button for results.
+</h2>
+<hr>
+<hr>
+<div class ="myCont">
+    <div class="regExpBox">
+    <form>
+    <label for="str">Enter String:</label><br>
+    <input type="text" id="str" name="str" value="" autofocus><br>
+    <label for="regExp">Enter Regular Expression:</label><br>
+    <input type="text" id="regExp" name="regExp" value=""><br><br>
+    <label>Results:</label><br>
+    <input type="text" id="result" disabled>
+
+    <div class="submitButton">
+        <div class="submitButtonLeft">
+            <button type="button" class="button" onclick="checkValid()">Submit</button>
+        </div>
+        <div class="clearButtonRight">
+            <button type="reset">Clear Inputs</button>
+        </div>
+    </div>
+    <br>
+    <br>
+
+  </form> 
+    </div>
+</div>
+
+
+
+<script>
+    function checkValid(){
+        
+        str = String(str);
+
+        const regExpr = new RegExp(reg_Exp);
+
+        const check = regExpr.test(str);
+        
+        
+        //user input
+        const str = documnet.getElementById("str").value;
+        const reg_Exp = document.getElementById("reg_Exp").value;
+
+        //check results
+        if(str === "" && reg_Exp ===""){
+            document.getElementById("result").value="Error"
+        }else if (str === ""){
+            document.getElementById("result").value="Error! Enter a String:"
+        }else if (reg_Exp ===""){
+            document.getElementById("result").value="Error! Enter a Regular Expression:"
+        }else {
+            document.getElementById("result").value = check;
+        }
+
+
+
+    }
+
+
+</script>
+</body>
+</html>

@@ -14,7 +14,6 @@
 <html lang="en">
 <title>Marjie's Regular Expression</title>
 <meta charset="utf-8">
-<head>
 <style>
 body {
   background: #757272;
@@ -41,10 +40,16 @@ form{
     height: 28px;
     size: 20px;
 }
-.submitButton{
+.Button{
     font-size: 25px;
+    cursor: pointer;
 }
-
+.button:hover{
+    background: white;
+}
+.button:focus{
+    background-color: grey;
+}
 </style>
 </head>
 <body>  
@@ -54,46 +59,43 @@ form{
 <hr>
 
 <h2>Begin by inputting the string you want to test followed by the Regular Expression
-    you are testing against. Lastly, hit the submit button for results.
+    you are testing against. Lastly, hit the Check button for results.
 </h2>
 <hr>
 <hr>
-
+<!--create form for input values -->
 <form>
     <label for="userString">Enter String:</label><br>
     <input type="text" id="userString" name="userString"><br><br><br><br>
 
     <label for="userRegex">Enter Regular Expression: </label><br>
     <input type="text" id="userRegex" name="userRegex"><br><br><br><br>
-
-    <button type="button" class="button" onclick= "checkValid()">Submit</button><br><br><br><br>
-
+    <!--checkValid does not seem to be working-->
+    <button type="button" class="button" onclick= "checkValid(userString, userRegex)">Check</button><br><br><br><br>
+    <!--result-->
     <label>Results:</label><br>
-    <input type="text" id="results" value="" disabled><br><br><br><br>
-
+    <input type="text" id="result" value="" disabled><br><br><br><br>
     
     <button type="button" class="reset">Clear Fields</button>
 
 </form>
-
+<!--checkVaild function to test against the two inputs, Im not sure what is going wrong????-->
 <script>
     function checkValid(){
-        const inputString = document.getElementById("userSting").value;
-        const inputRegex = document.getElementById("userRegex").value;
+        var inputString = document.getElementById("userSting").value;
+        var inputRegex = document.getElementById("userRegex").value;
 
-        const regexVal = RegExp(inputRegex);
+        var regexVal = new RegExp(inputRegex);
 
         if (inputString === ""){
-            document.getElementById(results).value = "Error, Please Enter a String:"
+            document.getElementById("result").value = "Error, Please Enter a String:"
         }else if (inputRegex === ""){
-            document.getElementById(results).value = "Error, Please Enter a Regular Expression:"
-        }else if (inputString === "" && inputRegex === ""){
-            document.getElementById(results).value = "Error!"
+            document.getElementById("result").value = "Error, Please Enter a Regular Expression:"
+        }else if (inputRegex===""){
         }else{
-            document.getElementById(results).value = regexVal.test(inputRegex);
+            document.getElementById("result").value = regexVal.test(inputRegex);
         }
     }
 </script>
-
 </body>
 </html>

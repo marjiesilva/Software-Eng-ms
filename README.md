@@ -1,4 +1,4 @@
-<h1> align="center">Software Engineering Sprint 2</h1>
+<h1>Software Engineering Sprint 2</h1>
 <br>
 <br>
 <br>
@@ -14,6 +14,10 @@
 ## Description
 <p> This project contains the contects of Sprint 2 in my Softeware Engineering class. Throughout
     this Sprint, I created a Landing Page with links to my projects.
+</p>
+
+## Projects
+<p>
 </p>
 
 

@@ -11,14 +11,12 @@
 -->
 
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Marjie's Dice Roller Game</title>
 <meta charset="UTF-8">
+<!--CSS for my paragraphs, heading, buttons, body, and dice.-->
 <style>
 p {
   margin:0;
@@ -97,8 +95,8 @@ button:hover {
 }
 </style>
 </head>
-<body onload="rollDice()">
-        <div class="heading">
+<body onload="rollDice()">                             <!--onload allows the dice to roll when page is loaded-->
+        <div class="heading">                                 <!--introduction to project and how to play-->
           <p>Welcome to Marjie's Dice Roller Game! 
               <br>
               <br>
@@ -124,8 +122,8 @@ button:hover {
           </p>
         </div>-->
         
-        <div class="row">
-        <div class="dice diceOne">
+        <div class="row">             <!-- my two dice will be next to each other in one row with-->
+        <div class="dice diceOne">    <!--a div class for dice one and another for dice two-->
           <h1>1</h1>
           <p id="diceNumOne" class="diceNum1"></p>
         </div>
@@ -140,8 +138,11 @@ button:hover {
           <button type ="button" onclick="rollDice()" autofocus>Ready Go!</button>
         </div>
       
-
-<script>
+        <!--my javascript function for the dice below.
+            using Math.random to generate random number
+            up to 6. If else statements to print out the 
+            winner or if it was a tie.   -->
+<script>                
     function rollDice (){
 var diceOne = Math.floor(Math.random()*6)+1;
 var diceTwo = Math.floor(Math.random()*6)+1;

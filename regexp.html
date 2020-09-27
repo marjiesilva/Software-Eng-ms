@@ -38,14 +38,12 @@ h2{
 }
 form{
     text-align: center;
-    font-size: larger;
+    height: 28px;
+    size: 20px;
 }
 .submitButton{
     font-size: 25px;
 }
-
-
-
 
 </style>
 </head>
@@ -60,63 +58,42 @@ form{
 </h2>
 <hr>
 <hr>
-<div class ="myCont">
-    <div class="regExpBox">
-    <form>
-    <label for="str">Enter String:</label><br>
-    <input type="text" id="str" name="str" value="" autofocus><br>
-    <label for="regExp">Enter Regular Expression:</label><br>
-    <input type="text" id="regExp" name="regExp" value=""><br><br>
+
+<form>
+    <label for="userString">Enter String:</label><br>
+    <input type="text" id="userString" name="userString"><br><br><br><br>
+
+    <label for="userRegex">Enter Regular Expression: </label><br>
+    <input type="text" id="userRegex" name="userRegex"><br><br><br><br>
+
+    <button type="button" class="button" onclick= "checkValid()">Submit</button><br><br><br><br>
+
     <label>Results:</label><br>
-    <input type="text" id="result" disabled>
+    <input type="text" id="results" value="" disabled><br><br><br><br>
 
-    <div class="submitButton">
-        <div class="submitButtonLeft">
-            <button type="button" class="button" onclick="checkValid()">Submit</button>
-        </div>
-        <div class="clearButtonRight">
-            <button type="reset">Clear Inputs</button>
-        </div>
-    </div>
-    <br>
-    <br>
+    
+    <button type="button" class="reset">Clear Fields</button>
 
-  </form> 
-    </div>
-</div>
-
-
+</form>
 
 <script>
     function checkValid(){
-        
-        str = String(str);
+        const inputString = document.getElementById("userSting").value;
+        const inputRegex = document.getElementById("userRegex").value;
 
-        const regExpr = new RegExp(reg_Exp);
+        const regexVal = RegExp(inputRegex);
 
-        const check = regExpr.test(str);
-        
-        
-        //user input
-        const str = documnet.getElementById("str").value;
-        const reg_Exp = document.getElementById("reg_Exp").value;
-
-        //check results
-        if(str === "" && reg_Exp ===""){
-            document.getElementById("result").value="Error"
-        }else if (str === ""){
-            document.getElementById("result").value="Error! Enter a String:"
-        }else if (reg_Exp ===""){
-            document.getElementById("result").value="Error! Enter a Regular Expression:"
-        }else {
-            document.getElementById("result").value = check;
+        if (inputString === ""){
+            document.getElementById(results).value = "Error, Please Enter a String:"
+        }else if (inputRegex === ""){
+            document.getElementById(results).value = "Error, Please Enter a Regular Expression:"
+        }else if (inputString === "" && inputRegex === ""){
+            document.getElementById(results).value = "Error!"
+        }else{
+            document.getElementById(results).value = regexVal.test(inputRegex);
         }
-
-
-
     }
-
-
 </script>
+
 </body>
 </html>

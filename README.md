@@ -31,8 +31,7 @@
 
 ##### Files
 
-<img src="files.jpg" width="50%">
-
+![Files Pic](files.jpg)
 
 
 

@@ -48,7 +48,7 @@ form{
     background: white;
 }
 .button:focus{
-    background-color: grey;
+    background-color: rgb(12, 1, 1);
 }
 </style>
 </head>
@@ -70,30 +70,29 @@ form{
 
     <label for="userRegex">Enter Regular Expression: </label><br>
     <input type="text" id="userRegex" name="userRegex"><br><br><br><br>
-    <!--checkValid does not seem to be working-->
+    <!--checkValid -->
     <button type="button" class="button" onclick= "checkValid(userString, userRegex)">Check</button><br><br><br><br>
     <!--result-->
     <label>Results:</label><br>
-    <input type="text" id="result" value="" disabled><br><br><br><br>
+    <input id="result" type="text" value="" size="36" disabled >
     
-    <button type="button" class="reset">Clear Fields</button>
 
 </form>
-<!--checkVaild function to test against the two inputs, Im not sure what is going wrong????-->
+<!--checkVaild function to test against the two inputs-->
 <script>
     function checkValid(){
-        var inputString = document.getElementById("userSting").value;
-        var inputRegex = document.getElementById("userRegex").value;
+        inputString = document.getElementById("userString").value;
+        inputRegex = document.getElementById("userRegex").value;
 
-        var regexVal = new RegExp(inputRegex);
+        regexVal = RegExp(inputRegex);
 
-        if (inputString === ""){
+        if (inputString === ''){
             document.getElementById("result").value = "Error, Please Enter a String:"
-        }else if (inputRegex === ""){
+        }else if (inputRegex === ''){
             document.getElementById("result").value = "Error, Please Enter a Regular Expression:"
-        }else if (inputRegex===""){
+        }else if (inputRegex===''){
         }else{
-            document.getElementById("result").value = regexVal.test(inputRegex);
+            document.getElementById("result").value = regexVal.test(inputString);
         }
     }
 </script>
